@@ -1,0 +1,50 @@
+#titulo {
+    font-size: 3rem; 
+    color: white; 
+    margin-bottom: 20px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    text-align: center; 
+}
+
+.portada {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #c53e8b, #8a5171); 
+  }
+  
+#logo {
+    width: 400px; 
+  }
+
+
+
+  #entrar-btn {
+    background-color: #ff0000;
+    border-color: #ff0000;  
+    color: white;             
+  }
+  
+  #entrar-btn:hover {
+    background-color: #970000; 
+    border-color: #970000;
+  }
+
+  .footer {
+    position: relative; 
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; 
+    padding: 20px; 
+}
+
+.footer-image {
+    width: 200px; 
+    height: 200px;
+}
+body {
+        
+  font-family: 'Helvetica', Arial, sans-serif;
+}
