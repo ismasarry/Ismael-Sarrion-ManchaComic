@@ -1,0 +1,162 @@
+
+body {
+    background-color: #a55582;          
+    display: flex;                      
+    flex-direction: column;           
+    min-height: 100vh;                
+    margin: 0;                          
+    font-family: Arial, sans-serif;     
+}
+
+.header-inicio {
+    display: flex;                     
+    justify-content: space-between;    
+    align-items: center;              
+    padding: 1rem 2rem;               
+    background-color: #85275C;        
+}
+
+.nav {
+    display: flex;                    
+    list-style: none;               
+    margin: 0;                        
+    padding: 0;                      
+}
+
+.nav-item {
+    margin-left: 1.5rem;              
+}
+
+.nav-link {
+    text-decoration: none;            
+    color: white;    
+    transition: color 0.3s, text-decoration 0.3s; 
+}
+
+.nav-link:hover {
+    text-decoration: underline;     
+    color: #ffda22;       
+}
+
+.nav-link.active {
+    color: #ffda22;              
+    font-weight: bold;               
+    text-decoration: underline;    
+}
+
+.container-Titulo {
+    text-align: center;                
+    margin-top: 3rem;   
+    font-size: 3rem; 
+    color: white; 
+    margin-bottom: 20px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+             
+}
+
+.container {
+    display: flex;                    
+    flex-direction: column;          
+    align-items: center;             
+    margin-top: 2rem;               
+}
+
+.btn-register, .btn-calendar {
+    padding: 1rem 2rem;              
+    font-size: 1.25rem;             
+    border-radius: 0.5rem;          
+    margin: 10px 0;                           
+   
+}
+
+.btn-register {
+    background-color: #ff0000;       
+    color: white;                   
+    border: none;                     
+}
+
+.btn-calendar {
+    background-color: #ff0000;       
+    color: white;                   
+    border: none;                     
+}
+
+.btn-register:hover, .btn-calendar:hover {
+    color: white;  
+    background-color: #8c0101;                       
+}
+
+.footer {
+    background-color: #343a40;        
+    color: white;                    
+    padding: 20px 0;                   
+    margin-top: 50px;                  
+}
+
+.footer h5 {
+    font-weight: bold;                
+    margin-bottom: 15px;              
+}
+
+.footer p, .footer ul, .footer li {
+    font-size: 14px;                  
+}
+
+.footer .social {
+    margin-right: 10px;              
+}
+
+.footer .social img {
+    width: 24px;                      
+    height: 24px;
+    filter: brightness(0) invert(1);   
+}
+
+.footer .social img:hover {
+    filter: brightness(0.8);         
+}
+
+.footer hr {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.derechos p {
+    margin: 0;
+    font-size: 13px;                
+}
+
+.navbar-nav .nav-link.active {
+    color: #ffda22 !important;         
+    font-weight: bold;                
+    text-decoration: underline;      
+}
+
+.navbar-nav .nav-link {
+    text-decoration: none;
+    color: rgba(0,0,0,.5);            
+}
+
+.navbar-nav .nav-link:hover {
+    text-decoration: underline;
+    color: rgba(0,0,0,.7);           
+}
+
+@media (max-width: 767.98px) {
+    .header-inicio {
+        flex-direction: column;        
+        align-items: flex-start;     
+    }
+
+    .nav-item {
+        margin-left: 0;             
+        margin-top: 0.5rem;             
+    }
+}
+
+main {
+    flex: 1;
+}
+
+.footer {
+    margin-top: auto;                  
+}
