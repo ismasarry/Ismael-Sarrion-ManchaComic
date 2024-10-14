@@ -1,11 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FROM</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../src/css/form.css"> 
 </head>
 <body>
+    <header class="header-inicio">
+        <div class="logo">
+            <img src="../src/assets/manchacomic_logo_alreves.png" alt="Logo" width="100"> 
+        </div>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="mainPage.html">Inicio</a> 
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="form.html">Registrar Actividad</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="schedule.html">Horario 2025</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container my-5">
+        <h2 class="mb-4" id="tituloPagina">Registrar Nueva Actividad</h2>
+        <form id="formularioActividad" novalidate>
+            <div class="form-group">
+                <label for="diaActividad"><i class="fas fa-calendar-day"></i> Día de la Actividad</label>
+                <select class="form-control" id="diaActividad" required>
+                    <option value="">Seleccione un día</option>
+                    <option value="Viernes">Viernes</option>
+                    <option value="Sábado">Sábado</option>
+                    <option value="Domingo">Domingo</option>
+                </select>
+                <div class="invalid-feedback">
+                    Por favor, seleccione un día para la actividad.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="tipoActividad"><i class="fas fa-list-alt"></i> Tipo de Actividad</label>
+                <select class="form-control" id="tipoActividad" required>
+                    <option value="">Seleccione un tipo de actividad</option>
+                    <option value="Charlas">Charlas</option>
+                    <option value="Talleres">Talleres</option>
+                    <option value="Juegos de Mesas">Juegos de Mesas</option>
+                    <option value="Wargames">Wargames</option>
+                    <option value="Rol/Escape Room">Rol/Escape Room</option>
+                </select>
+                <div class="invalid-feedback">
+                    Por favor, seleccione un tipo de actividad.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="sitioActividad"><i class="fas fa-map-marker-alt"></i> Sitio de la Actividad</label>
+                <select class="form-control" id="sitioActividad" required>
+                    <option value="">Seleccione un sitio</option>
+                    <option value="Jardín del Prado">Jardín del Prado</option>
+                    <option value="Sala Casino1">Sala Casino 1</option>
+                    <option value="Sala Casino2">Sala Casino 2</option>
+                    <option value="Sala Casino3">Sala Casino 3</option>
+                    <option value="Sala Casino4">Sala Casino 4</option>
+                    <option value="Sala Casino5">Sala Casino 5</option>
+                    <option value="Sala Casino6">Sala Casino 6</option>
+                    <option value="Sala Casino7">Sala Casino 7</option>
+                    <option value="Sala Casino8">Sala Casino 8</option>
+                    <option value="Sala Casino9">Sala Casino 9</option>
+                    <option value="Sala Casino10">Sala Casino 10</option>
+                    <option value="Sala Cueva1">Sala Cueva 1</option>
+                    <option value="Sala Cueva2">Sala Cueva 2</option>
+                </select>
+                <div class="invalid-feedback">
+                    Por favor, seleccione un sitio para la actividad.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="horaActividad"><i class="fas fa-clock"></i> Hora de la Actividad</label>
+                <select class="form-control" id="horaActividad" required>
+                    <option value="">Seleccione una hora</option>
+                </select>
+                <div class="invalid-feedback">
+                    Por favor, seleccione una hora para la actividad.
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Enviar</button>
+            <div id="error-message" class="text-danger mt-3" style="display: none;"></div>
+
+        </form>
+    </main>
     
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Sobre Nosotros</h5>
+                    <p>Mancha Cómic es un evento anual dedicado a los amantes del cómic, juegos de mesa y cultura geek. ¡Únete a nosotros en 2025!</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <ul class="direccion">
+                        <li>Email: info@manchacomic.com</li>
+                        <li>Tel: +34 123 456 789</li>
+                        <li>Dirección: Ciudad Real, España</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Síguenos</h5>
+                    <div>
+                        <a href="#" class="social"><img src="../src/assets/facebook_logo.png" alt="Facebook"></a>
+                        <a href="#" class="social"><img src="../src/assets/x_logo.png" alt="Twitter"></a>
+                        <a href="#" class="social"><img src="../src/assets/instagram_logo.png" alt="Instagram"></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="derechos">
+                <p>&copy; 2025 Mancha Cómic. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../src/js/form.js"></script>
 </body>
 </html>
