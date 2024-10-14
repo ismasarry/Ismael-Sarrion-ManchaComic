@@ -79,9 +79,19 @@
                     Por favor, seleccione un sitio para la actividad.
                 </div>
             </div>
-           
 
+            <div class="form-group">
+                <label for="horaActividad"><i class="fas fa-clock"></i> Hora de la Actividad</label>
+                <select class="form-control" id="horaActividad" required>
+                    <option value="">Seleccione una hora</option>
+                </select>
+                <div class="invalid-feedback">
+                    Por favor, seleccione una hora para la actividad.
+                </div>
+            </div>
             <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Enviar</button>
+            <div id="error-message" class="text-danger mt-3" style="display: none;"></div>
+
         </form>
     </main>
     
