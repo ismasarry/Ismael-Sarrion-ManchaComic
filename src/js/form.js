@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function actualizarHoras() {
         var diaSeleccionado = diaActividad.value;
-        horaActividad.innerHTML = '<option value="">Seleccione una hora</option>'; // Resetea las opciones de hora
+        horaActividad.innerHTML = '<option value="">Seleccione una hora</option>'; 
 
         let horasDisponibles;
 
