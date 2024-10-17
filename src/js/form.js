@@ -75,7 +75,18 @@ document.addEventListener('DOMContentLoaded', function () {
             errorMessage.textContent = 'Por favor, complete todos los campos requeridos correctamente.';
             errorMessage.style.display = 'block';
         } else {
-            window.location.href = '../public/schedule.html'; 
+            var actividad = {
+                tipo: tipoActividad.value,
+                sitio: sitioActividad.value,
+                dia: diaActividad.value,
+                hora: horaActividad.value
+            };
+            
+            var actividades = JSON.parse(localStorage.getItem('actividades')) || [];
+            actividades.push(actividad);
+            localStorage.setItem('actividades', JSON.stringify(actividades));
+
+            window.location.href = '../public/schedule.html';
         }
     }, false);
 });
