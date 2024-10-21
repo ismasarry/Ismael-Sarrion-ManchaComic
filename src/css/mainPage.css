@@ -7,9 +7,11 @@ body {
     min-height: 100vh;                
     margin: 0;                          
     font-family: 'Helvetica', Arial, sans-serif;
+    
 }
 
 .header-inicio {
+    width: 100%; 
     display: flex;                     
     justify-content: space-between;    
     align-items: center;              
@@ -56,12 +58,12 @@ body {
 }
 
 .container {
-    display: flex;                    
-    flex-direction: column;          
-    align-items: center;             
-    margin-top: 2rem;               
+    text-align: center;               
+    margin-top: 3rem;                 
+    font-size: 2rem;
+    color: white; 
+                
 }
-
 .btn-register, .btn-calendar {
     padding: 1rem 2rem;              
     font-size: 1.25rem;             
@@ -161,12 +163,5 @@ main {
 .footer {
     margin-top: auto;                  
 }
-.nav-link.active {
-    color: #007bff; 
-    font-weight: bold; 
-}
 
-.nav-link:hover {
-    text-decoration: underline;
 
-}
