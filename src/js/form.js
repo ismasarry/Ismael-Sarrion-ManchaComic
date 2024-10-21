@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var diaActividad = document.getElementById('diaActividad');
     var horaActividad = document.getElementById('horaActividad');
     var errorMessage = document.getElementById('error-message');
+    var mensajeErrorHorario = document.getElementById('mensaje-error-horario');
 
     var sitiosOriginales = [
         "Jardín del Prado",
@@ -24,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function cambiarSitioActividad() {
         var selectedType = tipoActividad.value;
-        sitioActividad.innerHTML = '<option value="">Seleccione un sitio</option>'; 
+        sitioActividad.innerHTML = '<option value="">Seleccione un sitio</option>';
 
         if (selectedType === "Juegos de Mesas") {
             var option = document.createElement('option');
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
             option.text = "Jardín del Prado";
             sitioActividad.appendChild(option);
         } else if (selectedType !== "") {
-            sitiosOriginales.forEach(function(sitio) {
+            sitiosOriginales.forEach(function (sitio) {
                 var option = document.createElement('option');
                 option.value = sitio;
                 option.text = sitio;
@@ -43,18 +44,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function actualizarHoras() {
         var diaSeleccionado = diaActividad.value;
-        horaActividad.innerHTML = '<option value="">Seleccione una hora</option>'; 
+        horaActividad.innerHTML = '<option value="">Seleccione una hora</option>';
 
         let horasDisponibles;
 
         if (diaSeleccionado === "Viernes") {
-            horasDisponibles = ["17h", "18h", "19h", "20h", "21h", "22h"];
+            horasDisponibles = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
         } else if (diaSeleccionado === "Sábado" || diaSeleccionado === "Domingo") {
-            horasDisponibles = ["10h", "11h", "12h", "13h", "14h", "15h", "16h", "17h", "18h", "19h", "20h", "21h", "22h"];
+            horasDisponibles = ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
         }
 
         if (horasDisponibles) {
-            horasDisponibles.forEach(function(hora) {
+            horasDisponibles.forEach(function (hora) {
                 var option = document.createElement('option');
                 option.value = hora;
                 option.text = hora;
@@ -63,13 +64,41 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    function validarActividadNueva(actividad) {
+        var actividades = JSON.parse(localStorage.getItem('actividades')) || [];
+        var juegosMesaCount = 0;
+
+        for (var i = 0; i < actividades.length; i++) {
+            var act = actividades[i];
+
+            if (act.dia === actividad.dia && act.hora === actividad.hora) {
+                if (act.tipo === "Juegos de Mesas" && actividad.tipo === "Juegos de Mesas") {
+                    juegosMesaCount++;
+                    if (juegosMesaCount >= 5) {
+                        mensajeErrorHorario.textContent = 'No puede haber más de 5 juegos de mesa el mismo día a la misma hora.';
+                        mensajeErrorHorario.style.display = 'block';
+                        return false;
+                    }
+                } else if (act.tipo !== "Juegos de Mesas" && actividad.tipo === "Juegos de Mesas") {
+                    continue; 
+                } else {
+                    mensajeErrorHorario.textContent = 'No se puede registrar esta actividad ya que hay otra el mismo dia y a la misma hora.';
+                    mensajeErrorHorario.style.display = 'block';
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     diaActividad.addEventListener('change', actualizarHoras);
     tipoActividad.addEventListener('change', cambiarSitioActividad);
 
     form.addEventListener('submit', function (event) {
         event.preventDefault();
-        errorMessage.style.display = 'none'; 
-        errorMessage.textContent = ''; 
+        errorMessage.style.display = 'none';
+        mensajeErrorHorario.style.display = 'none';
+        mensajeErrorHorario.textContent = '';
 
         if (form.checkValidity() === false) {
             errorMessage.textContent = 'Por favor, complete todos los campos requeridos correctamente.';
@@ -77,11 +106,16 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             var actividad = {
                 tipo: tipoActividad.value,
-                sitio: sitioActividad.value,
+                ubicacion: sitioActividad.value, 
                 dia: diaActividad.value,
                 hora: horaActividad.value
             };
             
+
+            if (!validarActividadNueva(actividad)) {
+                return; 
+            }
+
             var actividades = JSON.parse(localStorage.getItem('actividades')) || [];
             actividades.push(actividad);
             localStorage.setItem('actividades', JSON.stringify(actividades));
