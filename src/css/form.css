@@ -158,10 +158,11 @@ form .btn {
     padding: 0.75rem;
     font-size: 1.1rem;
     color: white;
-    background-color: #ff0000;
+    background-color: #3E703B;
 }
 form .btn:hover {
-    background-color: #970000;
+    background-color: #2e512d;
+    color: white;
 }
 
 @media (max-width: 576px) {
