@@ -73,20 +73,20 @@ body {
 }
 
 .btn-register {
-    background-color: #ff0000;       
+    background-color: #3E703B;       
     color: white;                   
     border: none;                     
 }
 
 .btn-calendar {
-    background-color: #ff0000;       
+    background-color: #3E703B;       
     color: white;                   
     border: none;                     
 }
 
 .btn-register:hover, .btn-calendar:hover {
     color: white;  
-    background-color: #8c0101;                       
+    background-color: #2e512d;                       
 }
 
 .footer {

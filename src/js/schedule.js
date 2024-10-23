@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const horasDisponibles = ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
     const tablaHorario = document.getElementById('tablaHorario').querySelector('tbody');
+    const mensajeError = document.getElementById('mensaje-error');
 
     horasDisponibles.forEach(hora => {
         const fila = document.createElement('tr');
@@ -73,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         celda.addEventListener('drop', function (e) {
             e.preventDefault();
+            mensajeError.textContent = ''; 
             const actividadData = JSON.parse(e.dataTransfer.getData('text/plain'));
             const diaDestino = this.getAttribute('data-dia');
             const horaDestino = this.getAttribute('data-hora');
@@ -107,13 +109,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (actividadExistente.tipo === "Juegos de Mesas" && actividad.tipo === "Juegos de Mesas") {
                     juegosMesaCount++;
                     if (juegosMesaCount >= 5) {
-                        alert('No puede haber más de 5 juegos de mesa el mismo día a la misma hora.');
+                        mensajeError.textContent = '¡¡¡No puede haber más de 5 juegos de mesa el mismo día a la misma hora!!!';
                         return false;
                     }
                 } else if (actividadExistente.tipo !== "Juegos de Mesas" && actividad.tipo === "Juegos de Mesas") {
                     continue;
                 } else {
-                    alert('No se puede registrar esta actividad ya que hay otra el mismo día y a la misma hora.');
+                    mensajeError.textContent = '¡¡¡No se puede registrar esta actividad, ya que hay otra el mismo día y a la misma hora!!!';
                     return false;
                 }
             }

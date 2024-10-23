@@ -6,7 +6,7 @@ body {
     margin: 0;                           
     font-family: 'Helvetica', Arial, sans-serif;
     justify-content: flex-start;
-    align-items: center;  
+   
 }
 
 .header-inicio {
@@ -105,7 +105,7 @@ body {
     width: 100%;
     padding: 5px;
     border: none;
-    background-color: #85275C;
+    background-color:#3E703B;
     color: white;
     font-size: 0.8rem; 
     border-radius: 5px;
@@ -113,7 +113,7 @@ body {
 }
 
 #tablaHorario td button:hover {
-    background-color: #6a1f4a;
+    background-color:#2e512d;
 }
 
 .footer {
@@ -181,3 +181,8 @@ body {
     background-color: #f9f9f9;
 }
 
+
+#mensaje-error{
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    color: #941717;
+}

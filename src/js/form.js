@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
         mensajeErrorHorario.textContent = '';
 
         if (form.checkValidity() === false) {
-            errorMessage.textContent = 'Por favor, complete todos los campos requeridos correctamente.';
+            errorMessage.textContent = '¡¡¡Por favor, complete todos los campos requeridos correctamente!!!';
             errorMessage.style.display = 'block';
         } else {
             var actividad = {
