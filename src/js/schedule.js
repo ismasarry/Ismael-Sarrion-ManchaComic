@@ -103,24 +103,26 @@ document.addEventListener('DOMContentLoaded', function () {
     function validarMovimiento(actividad, diaDestino, horaDestino) {
         const actividades = JSON.parse(localStorage.getItem('actividades')) || [];
         let juegosMesaCount = 0;
-    
+
         for (const actividadExistente of actividades) {
             if (actividadExistente.dia === diaDestino && actividadExistente.hora === horaDestino) {
-                if (actividadExistente.tipo === "Juegos de Mesas" && actividad.tipo === "Juegos de Mesas") {
+                if (actividad.tipo === "Juegos de Mesas") {
+                    if (actividadExistente.tipo !== "Juegos de Mesas") {
+                        mensajeError.textContent = '¡¡¡No se puede registrar esta actividad, ya que hay otra el mismo día y a la misma hora!!!';
+                        return false;
+                    }
                     juegosMesaCount++;
                     if (juegosMesaCount >= 5) {
                         mensajeError.textContent = '¡¡¡No puede haber más de 5 juegos de mesa el mismo día a la misma hora!!!';
                         return false;
                     }
-                } else if (actividadExistente.tipo !== "Juegos de Mesas" && actividad.tipo === "Juegos de Mesas") {
-                    continue;
                 } else {
                     mensajeError.textContent = '¡¡¡No se puede registrar esta actividad, ya que hay otra el mismo día y a la misma hora!!!';
                     return false;
                 }
             }
         }
-    
+
         return true;
     }
 });
