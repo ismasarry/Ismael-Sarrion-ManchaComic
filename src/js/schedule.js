@@ -109,15 +109,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (actividad.tipo === "Juegos de Mesas") {
                     if (actividadExistente.tipo !== "Juegos de Mesas") {
                         mensajeError.textContent = '¡¡¡No se puede registrar esta actividad, ya que hay otra el mismo día y a la misma hora!!!';
+                        mensajeError.style.display = 'block';
                         return false;
                     }
                     juegosMesaCount++;
                     if (juegosMesaCount >= 5) {
                         mensajeError.textContent = '¡¡¡No puede haber más de 5 juegos de mesa el mismo día a la misma hora!!!';
+                        mensajeError.style.display = 'block'; 
                         return false;
                     }
                 } else {
                     mensajeError.textContent = '¡¡¡No se puede registrar esta actividad, ya que hay otra el mismo día y a la misma hora!!!';
+                    mensajeError.style.display = 'block'; 
                     return false;
                 }
             }
