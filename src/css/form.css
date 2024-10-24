@@ -7,7 +7,7 @@ body {
     min-height: 100vh;                
     margin: 0;                          
     font-family: 'Helvetica', Arial, sans-serif;
-  
+ 
 }
 
 .header-inicio {
@@ -46,6 +46,13 @@ body {
     text-decoration: underline;    
 }
 
+.container {
+    text-align: center;               
+    margin-top: 3rem;                 
+    font-size: 2rem;
+    color: white; 
+                
+}
 
 .footer {
     background-color: #343a40;        
@@ -86,17 +93,6 @@ body {
     font-size: 13px;                
 }
 
-.navbar-nav .nav-link.active {
-    color: #ffda22 !important;         
-    font-weight: bold;                
-    text-decoration: underline;      
-}
-
-.navbar-nav .nav-link {
-    text-decoration: none;
-    color: rgba(0,0,0,.5);            
-}
-
 .navbar-nav .nav-link:hover {
     text-decoration: underline;
     color: rgba(0,0,0,.7);           
@@ -121,15 +117,7 @@ main {
 .footer {
     margin-top: auto;                  
 }
-.nav-link.active {
-    color: #007bff; 
-    font-weight: bold; 
-}
 
-.nav-link:hover {
-    text-decoration: underline;
-
-}
 #tituloPagina{
 
     font-size: 3rem; 
@@ -170,10 +158,11 @@ form .btn {
     padding: 0.75rem;
     font-size: 1.1rem;
     color: white;
-    background-color: #ff0000;
+    background-color: #3E703B;
 }
 form .btn:hover {
-    background-color: #970000;
+    background-color: #2e512d;
+    color: white;
 }
 
 @media (max-width: 576px) {

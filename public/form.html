@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FROM</title>
+    <title>FORM</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../src/css/form.css"> 
 </head>
@@ -58,9 +58,9 @@
             </div>
 
             <div class="form-group">
-                <label for="sitioActividad"><i class="fas fa-map-marker-alt"></i> Sitio de la Actividad</label>
+                <label for="sitioActividad"><i class="fas fa-map-marker-alt"></i> Ubicación de la Actividad</label>
                 <select class="form-control" id="sitioActividad" required>
-                    <option value="">Seleccione un sitio</option>
+                    <option value="">Seleccione una ubicación</option>
                     <option value="Jardín del Prado">Jardín del Prado</option>
                     <option value="Sala Casino1">Sala Casino 1</option>
                     <option value="Sala Casino2">Sala Casino 2</option>
@@ -89,8 +89,9 @@
                     Por favor, seleccione una hora para la actividad.
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Enviar</button>
+            <button type="submit" class="btn "><i class="fas fa-paper-plane"></i> Enviar</button>
             <div id="error-message" class="text-danger mt-3" style="display: none;"></div>
+            <div id="mensaje-error-horario" class="text-danger mt-3" style="display: none;"></div>
 
         </form>
     </main>
